@@ -1,0 +1,6 @@
+com\gul\config\JpaConfig.class
+com\gul\config\WebInit.class
+com\gul\controller\HomeController.class
+com\gul\common\EmailGeneric.class
+com\gul\entity\PropertyConfig.class
+com\gul\config\JavaConfig.class
