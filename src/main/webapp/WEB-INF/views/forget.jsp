@@ -11,10 +11,10 @@
 </head>
 <body>
 <div class="container">
-				<form action="getOtp" method="post">
-Enter Email: <input type="text" name="email" />
+				<form:form action="getOtp" method="post" modelAttribute="user">
+Enter Email: <form:input path="email" />
 						<input type="submit" value="Share OTP">
-				</form>
+				</form:form>
 
 		</div>
 </body>

@@ -22,7 +22,7 @@ import com.gul.repository.UserRepository;
 
 @Controller
 @SessionAttributes("user")
-public class HomeController {
+public class LoginController {
 
 	@Autowired
 	UserRepository userRepository;
@@ -50,6 +50,7 @@ public class HomeController {
 	@GetMapping("/forget")
 	public ModelAndView forget() {
 		ModelAndView mav = new ModelAndView("forget");
+		mav.addObject("user", new User());
 		return mav;
 	}
 
@@ -62,25 +63,27 @@ public class HomeController {
 	}
 
 	@PostMapping("/getOtp")
-	public ModelAndView getOtp(HttpServletRequest request) {
+	public ModelAndView getOtp(@ModelAttribute("user") User user1) {
 		ModelAndView mav = new ModelAndView();
-		String email = request.getParameter("email");
+		String email = user1.getEmail();
 		User user = userRepository.findByEmail(email);
-		if(user==null) {
+		if (user == null) {
 			mav.setViewName("forget");
-			mav.addObject("msg","Email not registered");
-		}else {
+			mav.addObject("msg", "Email not registered");
+		} else {
 			UserOtp user2 = otpRepository.findByEmail(user.getEmail());
-			UserOtp userOtp = new UserOtp();
 			Random rnd = new Random();
 			int number = rnd.nextInt(999999);
-			userOtp.setEmail(user.getEmail());
-			userOtp.setOtp(Integer.toString(number));
-			otpRepository.save(userOtp);
-			EmailGeneric emailGeneric = new EmailGeneric(user2.getEmail(), "" + user2.getOtp(), "" + user2.getOtp(), config);
+			user2.setEmail(user.getEmail());
+			user2.setOtp(Integer.toString(number));
+			otpRepository.save(user2);
+			EmailGeneric emailGeneric = new EmailGeneric(user2.getEmail(), "" + user2.getOtp(),
+					"" + user2.getOtp(), config);
 			Thread thread = new Thread(emailGeneric);
 			thread.start();
-			
+			mav.setViewName("verification_page");
+			;
+
 		}
 		return mav;
 	}
@@ -95,7 +98,7 @@ public class HomeController {
 		} else {
 			mav.setViewName("dashboard");
 			mav.addObject("name", user2.getName());
-		}	
+		}
 		return mav;
 	}
 

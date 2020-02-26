@@ -10,5 +10,9 @@
 </head>
 <body>
 Welcome ${name}
-</body>
+
+ <a href="profile">Profile</a>
+<a href="appliedJobs">Applied Jobs</a>
+<a href="#">Messages</a>
+<a href="#">Notification</a></body>
 </html>
