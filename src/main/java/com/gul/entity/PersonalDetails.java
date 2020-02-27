@@ -25,8 +25,15 @@ public class PersonalDetails {
 	String category;
 	String defferentlyAbled;
 	Date dob;
-	@OneToMany
-	List<Language> languages = new ArrayList<Language>();
+	long uid;
+	
+	public long getUid() {
+		return uid;
+	}
+
+	public void setUid(long uid) {
+		this.uid = uid;
+	}
 
 	public long getId() {
 		return id;
@@ -92,19 +99,12 @@ public class PersonalDetails {
 		this.dob = dob;
 	}
 
-	public List<Language> getLanguages() {
-		return languages;
-	}
-
-	public void setLanguages(List<Language> languages) {
-		this.languages = languages;
-	}
 
 	@Override
 	public String toString() {
 		return "PersonalDetails [id=" + id + ", permanentAddress=" + permanentAddress + ", gender=" + gender
 				+ ", maritalStatus=" + maritalStatus + ", hometown=" + hometown + ", category=" + category
-				+ ", defferentlyAbled=" + defferentlyAbled + ", dob=" + dob + ", languages=" + languages + "]";
+				+ ", defferentlyAbled=" + defferentlyAbled + ", dob=" + dob + ", uid=" + uid + "]";
 	}
 
 }

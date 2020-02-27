@@ -98,6 +98,7 @@ public class LoginController {
 		} else {
 			mav.setViewName("dashboard");
 			mav.addObject("name", user2.getName());
+			mav.addObject("user", user2);
 		}
 		return mav;
 	}

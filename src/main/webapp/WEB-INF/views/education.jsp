@@ -13,35 +13,43 @@
 <body>
 	<div class="container">
 		<table>
-			<form:form action="saveDetails" method="post"
-				modelAttribute="personalDetails">
+			<form:form action="saveEducation" method="post"
+				modelAttribute="education">
 				<tr>
-					<td>Permanent Address:</td>
-					<td><form:input path="permanentAddress" /></td>
+					<td>Education Level:</td>
+					<td><form:input path="educationLevel" /></td>
 				</tr>
 				<tr>
-					<td>Gender:</td>
+					<td>Board:</td>
 					<td><form:input path="gender" /></td>
 				</tr>
 				<tr>
-					<td>Marital Status:</td>
+					<td>Passing Year:</td>
 					<td><form:input path="maritalStatus" /></td>
 				</tr>
 				<tr>
-					<td>Hometown:</td>
+					<td>Medium:</td>
 					<td><form:input path="hometown" /></td>
 				</tr>
 				<tr>
-					<td>Category:</td>
+					<td>Total Marks:</td>
 					<td><form:input path="category" /></td>
 				</tr>
 				<tr>
-					<td>Defferently Abled:</td>
+					<td>Course:</td>
 					<td><form:input path="defferentlyAbled" /></td>
 				</tr>
 				<tr>
-					<td>Dob:</td>
-					<td><form:input path="dob" type="date"/></td>
+					<td>Specialization:</td>
+					<td><form:input path="dob" type="date" /></td>
+				</tr>
+				<tr>
+					<td>University:</td>
+					<td><form:input path="dob" type="date" /></td>
+				</tr>
+				<tr>
+					<td>Course Type:</td>
+					<td><form:input path="dob" type="date" /></td>
 				</tr>
 				<%-- Language Name:<form:input path="personalDetails.languageName"/> --%>
 				<tr>
