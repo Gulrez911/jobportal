@@ -16,9 +16,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.gul.entity.Education;
 import com.gul.entity.PersonalDetails;
+import com.gul.entity.Skill;
 import com.gul.entity.User;
 import com.gul.repository.DetailsRepository;
 import com.gul.repository.EducationRepository;
+import com.gul.repository.SkillRepository;
 
 @Controller
 public class EmployeeController {
@@ -27,6 +29,8 @@ public class EmployeeController {
 	DetailsRepository detailsRepository;
 	@Autowired
 	EducationRepository educationRepository;
+	@Autowired
+	SkillRepository skillRepository;
 
 	@InitBinder
 	public void initConverter(WebDataBinder binder) {
@@ -59,4 +63,27 @@ public class EmployeeController {
 		return mav;
 	}
 
+	@PostMapping("/saveEducation")
+	public ModelAndView saveEducation(@SessionAttribute("user") User user,
+			@ModelAttribute("education") Education education) {
+		ModelAndView mav = new ModelAndView("profile");
+		education.setUid(user.getId());
+		educationRepository.save(education);
+		return mav;
+	}
+
+	@GetMapping("skill")
+	public ModelAndView skill(@SessionAttribute("user") User user) {
+		ModelAndView mav = new ModelAndView("skill");
+		mav.addObject("skill", new Skill());
+		return mav;
+	}
+
+	@PostMapping("/saveSkill")
+	public ModelAndView saveSkill(@SessionAttribute("user") User user, @ModelAttribute("skill") Skill skill) {
+		ModelAndView mav = new ModelAndView("skill");
+		skill.setUid(user.getId());
+		skillRepository.save(skill);
+		return mav;
+	}
 }

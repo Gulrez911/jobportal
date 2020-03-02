@@ -23,6 +23,15 @@ public class Education {
 	String specialization;
 	String university;
 	String courseType;
+	long uid;
+
+	public long getUid() {
+		return uid;
+	}
+
+	public void setUid(long uid) {
+		this.uid = uid;
+	}
 
 	public long getId() {
 		return id;
@@ -106,9 +115,10 @@ public class Education {
 
 	@Override
 	public String toString() {
-		return "Education [id=" + id + ", educationLevel=" + educationLevel + ", board=" + board + ", passingYear="
-				+ passingYear + ", medium=" + medium + ", totalMarks=" + totalMarks + ", course=" + course
-				+ ", specialization=" + specialization + ", university=" + university + ", courseType=" + courseType
+		return "Education [id=" + id + ", educationLevel=" + educationLevel + ", board=" + board
+				+ ", passingYear=" + passingYear + ", medium=" + medium + ", totalMarks="
+				+ totalMarks + ", course=" + course + ", specialization=" + specialization
+				+ ", university=" + university + ", courseType=" + courseType + ", uid=" + uid
 				+ "]";
 	}
 

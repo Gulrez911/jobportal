@@ -21,35 +21,35 @@
 				</tr>
 				<tr>
 					<td>Board:</td>
-					<td><form:input path="gender" /></td>
+					<td><form:input path="board" /></td>
 				</tr>
 				<tr>
 					<td>Passing Year:</td>
-					<td><form:input path="maritalStatus" /></td>
+					<td><form:input path="passingYear" /></td>
 				</tr>
 				<tr>
 					<td>Medium:</td>
-					<td><form:input path="hometown" /></td>
+					<td><form:input path="medium" /></td>
 				</tr>
 				<tr>
 					<td>Total Marks:</td>
-					<td><form:input path="category" /></td>
+					<td><form:input path="totalMarks" /></td>
 				</tr>
 				<tr>
 					<td>Course:</td>
-					<td><form:input path="defferentlyAbled" /></td>
+					<td><form:input path="course" /></td>
 				</tr>
 				<tr>
 					<td>Specialization:</td>
-					<td><form:input path="dob" type="date" /></td>
+					<td><form:input path="specialization" /></td>
 				</tr>
 				<tr>
 					<td>University:</td>
-					<td><form:input path="dob" type="date" /></td>
+					<td><form:input path="university"  /></td>
 				</tr>
 				<tr>
 					<td>Course Type:</td>
-					<td><form:input path="dob" type="date" /></td>
+					<td><form:input path="courseType" /></td>
 				</tr>
 				<%-- Language Name:<form:input path="personalDetails.languageName"/> --%>
 				<tr>

@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Skills {
+public class Skill {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,6 +17,15 @@ public class Skills {
 	String version;
 	String lastUsed;
 	String experience;
+	long uid;
+
+	public long getUid() {
+		return uid;
+	}
+
+	public void setUid(long uid) {
+		this.uid = uid;
+	}
 
 	public long getId() {
 		return id;
@@ -60,8 +69,8 @@ public class Skills {
 
 	@Override
 	public String toString() {
-		return "Skills [id=" + id + ", skill=" + skill + ", version=" + version + ", lastUsed=" + lastUsed
-				+ ", experience=" + experience + "]";
+		return "Skill [id=" + id + ", skill=" + skill + ", version=" + version + ", lastUsed=" + lastUsed
+				+ ", experience=" + experience + ", uid=" + uid + "]";
 	}
 
 }
